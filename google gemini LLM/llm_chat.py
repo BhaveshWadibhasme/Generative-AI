@@ -41,6 +41,7 @@ model = genai.GenerativeModel(
     generation_config=generation_config,
 )
 
+
 def extract_text_from_pdfs(pdf_files):
     text = ""
     for pdf_file in pdf_files:
@@ -49,10 +50,12 @@ def extract_text_from_pdfs(pdf_files):
             text += page.extract_text()
     return text
 
+
 def get_gpt_answer(context, question):
     chat_session = model.start_chat(history=[])
     response = chat_session.send_message(f"Context: {context}\n\nQuestion: {question}\n\nAnswer:")
     return response.text
+
 
 # Streamlit UI
 st.title("PDF Chatbot using Google Gemini Model")
