@@ -1,3 +1,2 @@
-transformers
-torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-torch
+# Non-notebook programs. Notebooks install their own packages in cells.
+-r "google gemini LLM/requirements.txt"
